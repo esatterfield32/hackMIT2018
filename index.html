@@ -319,14 +319,77 @@
     }
 </style>
 <div class="p-3 mb-2 bg-info text-white">
-    <div class="header">
+    <!--<div class="header">
         <div class="p-3">
             <a class="btn btn-outline-light" href="#" role="button">Upload</a>
             <input class="btn btn-outline-light" type="button" value="Done">
             <input class="btn btn-outline-light" type="reset" value="Reset">
         </div>
 
+    </div>-->
+    <style>
+        .topnav{
+            overflow:hidden;
+            margin:0;
+            padding:0;
+        }
+        .topnav a{
+            float:left;
+            font-family: "Segoe UI Light";
+            color: #f2f2f2;
+            text-align: center;
+            text-decoration:none;
+
+            font-size:48px;
+        }
+        .topnav aaaa{
+            font-family: "Segoe UI Light";
+            float:right;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration:none;
+            font-size:17px;
+        }
+
+        .upload{
+            font-family: "Segoe UI Light";
+            float:right;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration:none;
+            font-size:17px;
+
+        }
+    </style>
+
+
+    <div class = "topnav">
+        <a class ="active">Team LERL</a>
+        <aaaa><input type="file" class = "upload" accept="audio/*" capture id="recorder"></aaaa>
+
+        <form  enctype="multipart/form-data" method="post" action="audio.php">
+            <input id="fileupload" name="myfile" type="file" />
+            <input type="submit" value="submit" id="submit" />
+        </form>
+
+
+
     </div>
+    <script>
+        var recorder = document.getElementById('recorder');
+
+        recorder.addEventListener('change', function(e) {
+            var file = e.target.files[0];
+            // Do something with the audio file.
+            document.getElementById("debugg").innerHTML = window.URL.createObjectURL(e.target.files[0]);
+
+        });
+    </script>
+    <p id="debugg">
+
+    </p>
     <div class = vid>
         <iframe width="700" height="400" src="https://www.youtube.com/embed/mywnPddVYHY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
@@ -357,8 +420,8 @@
     <script>
 
         var jcontent = {
-            "transcript": "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived",
-            "keywords": ["score", "forth"]
+            "transcript": "Well, first of all, I support the second amendment. I lived in Arkansas for 18 wonderful years. I represented upstate New York. I understand and respect the tradition of gun ownership that goes back to the founding of our country, but I also believe that there can be and must be reasonable regulation. Because I support the second amendment doesn't mean that I want people who shouldn't have guns to be able to threaten you, kill you or members of your family. And so when I think about what we need to do, we have 33,000 people a year who die from guns. I think we need comprehensive background checks, need to close the online loophole, close the gun show loophole. ",
+            "keywords": ["second amendment", "upstate New York", "gun ownership"]
         }
 
         function highlight(input, key) {
