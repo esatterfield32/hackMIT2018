@@ -8,6 +8,7 @@
 <body>
 <div class="p-3 mb-2 bg-info text-white">
 <div class="container">
+
     <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link active" href="index.html">Speech to Text</a>
@@ -15,16 +16,36 @@
         <li class="nav-item">
             <a class="nav-link text-white" href="option2.html">Import Audio File</a>
         </li>
-    </ul>   <!-- Content here -->
+    </ul>
+    <!-- Content here -->
 </div>
 
-<div class = "container">
-    <a class="btn btn-outline-light" href="#" role="button">Link</a>
-    <button class="btn btn-outline-light" type="submit">Button</button>
-    <input class="btn btn-outline-light" type="button" value="Input">
-    <input class="btn btn-outline-light" type="submit" value="Submit">
-    <input class="btn btn-outline-light" type="reset" value="Reset">
-</div>
+    <div class = "container">
+        <div class = "p-3">
+            <p>
+                Record speech below.
+            </p>
+        <a class="btn btn-outline-light" href="#" role="button">Record</a>
+        <button class="btn btn-outline-light" type="pause">Pause</button>
+        <input class="btn btn-outline-light" type="button" value="Done">
+        <input class="btn btn-outline-light" type="reset" value="Reset">
+        </div>
+    </div>
+
+    <div class = "container">
+        <div id = "output">
+            nothing yet
+        </div>
+    </div>
+        <script>
+        var jcontent = {
+            "transcript" : "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived"
+        }
+
+        var output = document.getElementById('output');
+        output.innerHTML = jcontent.transcript;
+    </script>
+
 </div>
 </body>
 </html>
