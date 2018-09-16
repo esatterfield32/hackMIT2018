@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    .highlight{
+        color: aqua;
+        font-size: 20px;
+    }
+</style>
+
+<script>
+
+    function highlight(input, key){
+        return input.split(key).join("<span class='highlight'>"+key+"</span>");
+    }
+
+    function doIt(){
+        document.getElementById("para").innerHTML = highlight("you are awesome are awesome are awesome", "are");
+    }
+</script>
+
+<p id="para">potato
+</p>
+<button onclick="doIt()"></button>
+
+
+</body>
+</html>
