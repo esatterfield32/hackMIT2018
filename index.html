@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Speech Reference Checker</title>
+    <title>Smart Captions</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -304,6 +304,12 @@
         }
 
         // --></script>
+    <!--handle the submit of the file-->
+    <script>
+        function handleSubmit(){
+            outputToTextBox(jcontent.transcript, jcontent.keywords);
+        }
+    </script>
 
 
 </head>
@@ -343,6 +349,8 @@
             font-size:48px;
         }
         .topnav aaaa{
+
+            color: rgba(42, 99, 152, 0.69);
             font-family: "Segoe UI Light";
             float:right;
             color: #f2f2f2;
@@ -351,7 +359,22 @@
             text-decoration:none;
             font-size:17px;
         }
+        .topnav input{
+            background-color: #17A2B8;
+            color:white;
+            border-color: white;
+            border-radius: 6px;
+            width: 280px;
+            height:40px;
+        }
 
+        .topnav input textarea{
+            text-decoration-color: white;
+        }
+
+        .aaaa inputbox{
+            background-color: aqua;
+        }
         .upload{
             font-family: "Segoe UI Light";
             float:right;
@@ -366,14 +389,10 @@
 
 
     <div class = "topnav">
-        <a class ="active">Team LERL</a>
-        <aaaa><input type="file" class = "upload" accept="audio/*" capture id="recorder"></aaaa>
+        <a class ="active">Smart Captions</a>
 
-        <form  enctype="multipart/form-data" method="post" action="audio.php">
-            <input id="fileupload" name="myfile" type="file" />
-            <input type="submit" value="submit" id="submit" />
-        </form>
-
+        <aaaa><button class ="btn btn-outline-light" onclick="handleSubmit()">Submit</button> </aaaa>
+        <aaaa><input type="text"  class = "inputbox" capture id="recorder"></aaaa>
 
 
     </div>
@@ -381,9 +400,8 @@
         var recorder = document.getElementById('recorder');
 
         recorder.addEventListener('change', function(e) {
-            var file = e.target.files[0];
             // Do something with the audio file.
-            document.getElementById("debugg").innerHTML = window.URL.createObjectURL(e.target.files[0]);
+            document.getElementById("debugg").innerHTML = recorder.value;
 
         });
     </script>
@@ -465,12 +483,13 @@
     <style>
         .highlight {
             color: yellow;
+            font-weight: bold;
         }
     </style>
 </div>
 
-<!--button onclick="outputToTextBox('dont you worry child dont you worry now, we got you covered child', ['child', 'worry'])">CLACK ME</button-->
-<button onclick="outputToTextBox(jcontent.transcript, jcontent.keywords)">CLACK ME</button>
+<!--&lt;!&ndash;button onclick="outputToTextBox('dont you worry child dont you worry now, we got you covered child', ['child', 'worry'])">CLACK ME</button&ndash;&gt;-->
+<!--<button onclick="outputToTextBox(jcontent.transcript, jcontent.keywords)">CLACK ME</button>-->
 <style>
     #keywordName {
         margin-left: 40px;
