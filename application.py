@@ -43,7 +43,7 @@ def get_entities(text):
     
     return entityList
 
-API_KEY = "Bearer 01MupYze44lFlPrwIkG5iyTfI_jGDPYvee_gxfvmi6n_LMU5WHq99oT0urmtXZQUO9pJOcD0XT3SI8nHXEYFMkcm_5vgk"
+API_KEY = "Bearer KEY"
 HEADERS = {'Authorization': API_KEY}
 
 def submit_job_url(media_url):
